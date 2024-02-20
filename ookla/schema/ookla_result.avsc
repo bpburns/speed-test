@@ -1,0 +1,62 @@
+{
+    "type": "record",
+    "name": "ookla",
+    "fields": [{
+            "name": "type",
+            "type": "string"
+        }, {
+            "name": "timestamp",
+            "type": "string"
+        }, {
+            "name": "ping",
+            "type": {
+                "type": "map",
+                "values": "double"
+            }
+        }, {
+            "name": "download",
+            "type": {
+                "type": "map",
+                "values": ["long", {
+                        "type": "map",
+                        "values": "double"
+                    }
+                ]
+            }
+        }, {
+            "name": "upload",
+            "type": {
+                "type": "map",
+                "values": ["long", {
+                        "type": "map",
+                        "values": "double"
+                    }
+                ]
+            }
+        }, {
+            "name": "packetLoss",
+            "type": "double"
+        }, {
+            "name": "isp",
+            "type": "string"
+        }, {
+            "name": "interface",
+            "type": {
+                "type": "map",
+                "values": ["string", "boolean"]
+            }
+        }, {
+            "name": "server",
+            "type": {
+                "type": "map",
+                "values": ["int", "string"]
+            }
+        }, {
+            "name": "result",
+            "type": {
+                "type": "map",
+                "values": ["string", "boolean"]
+            }
+        }
+    ]
+}
