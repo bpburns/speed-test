@@ -35,7 +35,8 @@
             }
         }, {
             "name": "packetLoss",
-            "type": "double"
+            "type": ["null", "double"],
+            "default": null
         }, {
             "name": "isp",
             "type": "string"
