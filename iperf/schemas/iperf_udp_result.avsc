@@ -1,0 +1,150 @@
+{
+    "type": "record",
+    "name": "iperf",
+    "fields": [{
+            "name": "start",
+            "type": {
+                "type": "record",
+                "name": "start",
+                "fields": [{
+                        "name": "connected",
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "type": "map",
+                                "values": ["int", "string"]
+                            }
+                        }
+                    }, {
+                        "name": "version",
+                        "type": "string"
+                    }, {
+                        "name": "system_info",
+                        "type": "string"
+                    }, {
+                        "name": "timestamp",
+                        "type": {
+                            "type": "map",
+                            "values": ["long", "string"]
+
+                        }
+                    }, {
+                        "name": "connecting_to",
+                        "type": {
+                            "type": "record",
+                            "name": "connecting_to",
+                            "fields": [{
+                                    "name": "host",
+                                    "type": "string"
+                                }, {
+                                    "name": "port",
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    }, {
+                        "name": "cookie",
+                        "type": "string"
+                    }, {
+                        "name": "test_start",
+                        "type": {
+                            "type": "record",
+                            "name": "test_start",
+                            "fields": [{
+                                    "name": "protocol",
+                                    "type": "string"
+                                }, {
+                                    "name": "num_streams",
+                                    "type": "int"
+                                }, {
+                                    "name": "blksize",
+                                    "type": "int"
+                                }, {
+                                    "name": "omit",
+                                    "type": "int"
+                                }, {
+                                    "name": "duration",
+                                    "type": "int"
+                                }, {
+                                    "name": "bytes",
+                                    "type": "int"
+                                }, {
+                                    "name": "blocks",
+                                    "type": "int"
+                                }, {
+                                    "name": "reverse",
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+
+        }, {
+            "name": "intervals",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "interval",
+                    "fields": [{
+                            "name": "streams",
+                            "type": {
+                                "type": "array",
+                                "name": "streams",
+                                "items": {
+                                    "type": "map",
+                                    "values": ["long", "double", "string", "boolean"]
+                                }
+                            }
+                        }, {
+                            "name": "sum",
+                            "type": {
+                                "type": "map",
+                                "values": ["long", "double", "string", "boolean"]
+                            }
+                        }
+                    ]
+                }
+            }
+        }, {
+            "name": "end",
+            "type": {
+                "type": "record",
+                "name": "end",
+                "fields": [{
+                        "name": "streams",
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "type": "record",
+                                "name": "streams",
+                                "fields": [{
+                                        "name": "udp",
+                                        "type": {
+                                            "type": "map",
+                                            "values": ["long", "double"]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }, {
+                        "name": "sum",
+                        "type": {
+                            "type": "map",
+                            "values": ["long", "double"]
+                        }
+                    }, {
+                        "name": "cpu_utilization_percent",
+                        "type": {
+                            "type": "map",
+                            "values": "double"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
