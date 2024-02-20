@@ -2,7 +2,7 @@
 
 OUTPUT_DIR=test_results
 
-if [ -z ${SERVER} ]; then echo "Must specify SERVER"; exit; fi
+if [ -z ${SERVER} ]; then echo "Must specify SERVER"; exit 1; fi
 
 echo Will connect to $SERVER
 
